@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 import Hls from 'hls.js'
-import type { Video } from '../data/vod'
+import type { VideoInterface } from '../data/video'
 
 interface VideoPlayerProps {
-    video: Video
+    video: VideoInterface
 }
 
 export function VideoPlayer({ video }: VideoPlayerProps) {

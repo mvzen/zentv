@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import type { Video } from '../data/vod'
+import type { VideoInterface } from '../data/video'
 
 interface VideoCardProps {
-    video: Video
+    video: VideoInterface
 }
 
 export function VideoCard({ video }: VideoCardProps) {
