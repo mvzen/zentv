@@ -4,7 +4,7 @@ import type { Video } from '../data/videos'
 
 interface VideoPlayerProps {
     video: Video
-    controls?: boolean | true
+    controls?: boolean
 }
 
 export function VideoPlayer({ video, controls = true }: VideoPlayerProps) {

@@ -58,15 +58,15 @@ export const videos: Video[] = [
         createdAt: 2026
     },
     {
-        id: 'live1',
+        id: 'live-zentv',
         title: 'Zen TV1',
         info: 'Live stream',
         src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
         isLive: true
     },
     {
-        id: 'live2',
-        title: 'Test Broadpeak',
+        id: 'live-bpio',
+        title: 'Test Broadpeak.io',
         info: 'Broadpeak.io test live stream',
         src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
         isLive: true
