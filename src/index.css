@@ -76,6 +76,13 @@ img {
     opacity: 0.5;
 }
 
+hr {
+    margin: 3rem 0 2rem;
+    border: 0;
+    height: 1px;
+    background: var(--border);
+}
+
 /* Header */
 
 .site-header {
@@ -125,6 +132,12 @@ img {
 }
 
 /* Gallery */
+
+.gallery h2 {
+    margin: 0 0 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
 
 .gallery {
     padding: 3rem 1.5rem;
@@ -177,6 +190,19 @@ img {
 
 .video-card:hover .video-card__image {
     transform: scale(1.04);
+}
+
+.video-card__live {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent-gradient);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .video-card__overlay {

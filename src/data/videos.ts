@@ -1,8 +1,17 @@
-import type { VideoInterface } from '../data/video'
-
 const BASE_URL = 'https://videos.mvzen.com'
 
-export const vod: VideoInterface[] = [
+export interface Video {
+    id: string
+    title: string
+    info: string
+    src: string
+    isLive?: boolean | false
+    thumbnail?: string
+    createdBy?: string
+    createdAt?: number
+}
+
+export const videos: Video[] = [
     {
         id: 'flo60',
         title: 'Florence (60 ans)',
@@ -48,6 +57,20 @@ export const vod: VideoInterface[] = [
         createdBy: 'Dad & Kids',
         createdAt: 2026
     },
+    {
+        id: 'live1',
+        title: 'Zen TV1',
+        info: 'Live stream',
+        src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
+        isLive: true
+    },
+    {
+        id: 'live2',
+        title: 'Test Broadpeak',
+        info: 'Broadpeak.io test live stream',
+        src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
+        isLive: true
+    },
 ]
 
 export function getStreamUrl(id: string): string {
@@ -58,6 +81,6 @@ export function getThumbnailUrl(id: string): string {
     return `${BASE_URL}/${id}/preview.jpg`
 }
 
-export function getVideoById(id: string): VideoInterface | undefined {
-    return vod.find((video) => video.id === id)
+export function getVideoById(id: string): Video | undefined {
+    return videos.find((video) => video.id === id)
 }

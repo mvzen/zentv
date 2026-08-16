@@ -1,7 +1,7 @@
 import { VideoCard } from '../components/VideoCard'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
-import { vod } from '../data/vod'
+import { videos } from '../data/videos'
 
 export function Gallery() {
     return (
@@ -9,11 +9,23 @@ export function Gallery() {
             <SiteHeader />
 
             <main className="gallery page-layout__main">
+
+                <h2>VOD / replay</h2>
                 <div className="gallery__grid">
-                    {vod.map((video) => (
-                        <VideoCard key={video.id} video={video} />
+                    {videos.map((video) => (
+                        (!video.isLive && <VideoCard key={video.id} video={video} />)
                     ))}
                 </div>
+
+                <hr />
+
+                <h2>Live streams</h2>
+                <div className="gallery__grid">
+                    {videos.map((video) => (
+                        (video.isLive && <VideoCard key={video.id} video={video} />)
+                    ))}
+                </div>
+
             </main>
 
             <SiteFooter />

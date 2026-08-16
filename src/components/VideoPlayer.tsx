@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react'
 import Hls from 'hls.js'
-import type { VideoInterface } from '../data/video'
+import type { Video } from '../data/videos'
 
 interface VideoPlayerProps {
-    video: VideoInterface
+    video: Video
+    controls?: boolean | true
 }
 
-export function VideoPlayer({ video }: VideoPlayerProps) {
+export function VideoPlayer({ video, controls = true }: VideoPlayerProps) {
     const videoRef = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {
@@ -29,30 +30,13 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
     }, [video.src])
 
     return (
-        <main className="player-content page-layout__main">
-            <div className="player-header">
-                <h1>{video.title}</h1>
-                <h2>
-                    {video.createdBy && (
-                        <>
-                            <span className="info">{video.createdBy} ({video.createdAt})</span>
-                            <span className="seperator">|</span>
-                        </>
-                    )}
-                    <span className="info">{video.info}</span>
-                </h2>
-            </div>
-
-            <div className="player-wrapper">
-                <video
-                    ref={videoRef}
-                    className="video-element"
-                    controls
-                    playsInline
-                    autoPlay
-                    poster={video.thumbnail}
-                />
-            </div>
-        </main >
+        <video
+            ref={videoRef}
+            className="video-element"
+            controls={controls}
+            playsInline
+            autoPlay
+            poster={video.thumbnail}
+        />
     )
 }
