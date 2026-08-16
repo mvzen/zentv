@@ -28,3 +28,5 @@ The `public/_redirects` file enables client-side routing for `/watch/:id` URLs.
 ## Videos
 
 Streams and thumbnails are loaded from `https://videos.mvzen.com/{id}/`.
+
+Vibe coded with Cursor and fine-tuned by hand.
