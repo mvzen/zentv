@@ -1,16 +1,8 @@
-export interface Video {
-    id: string
-    title: string
-    info: string
-    src: string
-    thumbnail: string
-    createdBy: string
-    createdAt: number
-}
+import type { VideoInterface } from '../data/video'
 
 const BASE_URL = 'https://videos.mvzen.com'
 
-export const vod: Video[] = [
+export const vod: VideoInterface[] = [
     {
         id: 'flo60',
         title: 'Florence (60 ans)',
@@ -66,6 +58,6 @@ export function getThumbnailUrl(id: string): string {
     return `${BASE_URL}/${id}/preview.jpg`
 }
 
-export function getVideoById(id: string): Video | undefined {
+export function getVideoById(id: string): VideoInterface | undefined {
     return vod.find((video) => video.id === id)
 }
