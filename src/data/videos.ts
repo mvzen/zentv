@@ -1,7 +1,7 @@
 export interface Video {
     id: string
     title: string
-    song: string
+    info: string
     createdBy: string
     createdAt: number
 }
@@ -12,35 +12,35 @@ export const videos: Video[] = [
     {
         id: 'flo60',
         title: 'Florence (60 ans)',
-        song: 'Joan Baez - Diamonds & Rust',
+        info: 'Joan Baez - Diamonds & Rust',
         createdBy: 'Les Quatre Cousins',
         createdAt: 2018
     },
     {
         id: 'lily80',
         title: 'Lily (80 ans)',
-        song: 'Simon & Garfunkel - The Sound of Silence',
+        info: 'Simon & Garfunkel - The Sound of Silence',
         createdBy: 'Les Quatre Cousins',
         createdAt: 2022
     },
     {
         id: 'christine70',
         title: 'Christine (70 ans)',
-        song: 'Tracy Chapman - Telling Stories',
+        info: 'Tracy Chapman - Telling Stories',
         createdBy: 'Les Quatre Cousins',
         createdAt: 2023
     },
     {
         id: 'coco40',
         title: 'Coco (40 ans)',
-        song: 'Kids United - On écrit sur les murs',
+        info: 'Kids United - On écrit sur les murs',
         createdBy: 'Les Quatre Cousins',
         createdAt: 2026
     },
     {
         id: 'sensdelafamille',
         title: 'Coco - Sens de la famille',
-        song: 'Grand Corps Malade - Le sens de la famille',
+        info: 'Grand Corps Malade - Le sens de la famille',
         createdBy: 'Dad & Kids',
         createdAt: 2026
     },

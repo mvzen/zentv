@@ -38,14 +38,15 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
 
             <main className="player-content page-layout__main">
                 <div className="player-header">
-                    {/* <Link to="/" className="back-link">
-                        ← Back to videos
-                    </Link> */}
                     <h1>{video.title}</h1>
                     <h2>
-                        <span className="info">{video.createdBy} ({video.createdAt})</span>
-                        <span className="seperator">|</span>
-                        <span className="info">{video.song}</span>
+                        {video.createdBy && (
+                            <>
+                                <span className="info">{video.createdBy} ({video.createdAt})</span>
+                                <span className="seperator">|</span>
+                            </>
+                        )}
+                        <span className="info">{video.info}</span>
                     </h2>
                 </div>
 
@@ -59,9 +60,9 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
                         poster={getThumbnailUrl(video.id)}
                     />
                 </div>
-            </main>
+            </main >
 
             <SiteFooter />
-        </div>
+        </div >
     )
 }
