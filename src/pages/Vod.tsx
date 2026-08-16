@@ -24,5 +24,11 @@ export function Vod() {
         )
     }
 
-    return <VideoPlayer video={video} />
+    return (
+        <div className="page-layout">
+            <SiteHeader />
+            <VideoPlayer video={video} />
+            <SiteFooter />
+        </div >
+    )
 }

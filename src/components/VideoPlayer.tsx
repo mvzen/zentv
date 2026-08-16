@@ -33,36 +33,30 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
     }, [streamUrl])
 
     return (
-        <div className="page-layout">
-            <SiteHeader />
+        <main className="player-content page-layout__main">
+            <div className="player-header">
+                <h1>{video.title}</h1>
+                <h2>
+                    {video.createdBy && (
+                        <>
+                            <span className="info">{video.createdBy} ({video.createdAt})</span>
+                            <span className="seperator">|</span>
+                        </>
+                    )}
+                    <span className="info">{video.info}</span>
+                </h2>
+            </div>
 
-            <main className="player-content page-layout__main">
-                <div className="player-header">
-                    <h1>{video.title}</h1>
-                    <h2>
-                        {video.createdBy && (
-                            <>
-                                <span className="info">{video.createdBy} ({video.createdAt})</span>
-                                <span className="seperator">|</span>
-                            </>
-                        )}
-                        <span className="info">{video.info}</span>
-                    </h2>
-                </div>
-
-                <div className="player-wrapper">
-                    <video
-                        ref={videoRef}
-                        className="video-element"
-                        controls
-                        playsInline
-                        autoPlay
-                        poster={getThumbnailUrl(video.id)}
-                    />
-                </div>
-            </main >
-
-            <SiteFooter />
-        </div >
+            <div className="player-wrapper">
+                <video
+                    ref={videoRef}
+                    className="video-element"
+                    controls
+                    playsInline
+                    autoPlay
+                    poster={getThumbnailUrl(video.id)}
+                />
+            </div>
+        </main >
     )
 }
