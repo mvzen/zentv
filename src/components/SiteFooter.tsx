@@ -1,9 +1,9 @@
 export function SiteFooter() {
-  return (
-    <footer className="site-footer discreet-surface">
-      <p className="site-footer__text">
-        © Mark Veldhuizen - video streaming playground
-      </p>
-    </footer>
-  )
+    return (
+        <footer className="site-footer discreet-surface">
+            <p className="site-footer__text">
+                © Mark Veldhuizen
+            </p>
+        </footer>
+    )
 }

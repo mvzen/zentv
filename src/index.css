@@ -64,7 +64,6 @@ img {
 .page-layout__main {
     flex: 1;
     width: 100%;
-    max-width: 1200px;
 }
 
 .discreet-surface {
@@ -152,6 +151,10 @@ img {
     box-shadow: var(--shadow), 0 0 32px rgba(0, 234, 255, 0.35);
 }
 
+.video-card:active {
+    transform: translateY(2px);
+}
+
 .video-card__image-wrap {
     position: relative;
     aspect-ratio: 16 / 9;
@@ -193,15 +196,15 @@ img {
     justify-content: center;
     border-radius: 50%;
     background: var(--accent-gradient);
-    color: #001018;
-    font-size: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
     box-shadow: 0 8px 24px var(--accent-glow);
 }
 
 .video-card__title {
     margin: 0;
     padding: 0.875rem 1rem 1rem;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: var(--text-primary);
 }
@@ -224,6 +227,13 @@ img {
     margin: 0.75rem 0 0;
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.player-header h2 {
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-secondary);
 }
 
 .back-link {

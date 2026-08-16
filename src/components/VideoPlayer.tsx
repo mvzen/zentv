@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import Hls from 'hls.js'
-import { Link } from 'react-router-dom'
 import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
 import type { Video } from '../data/videos'
@@ -39,10 +38,11 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
 
             <main className="player-content page-layout__main">
                 <div className="player-header">
-                    <Link to="/" className="back-link">
+                    {/* <Link to="/" className="back-link">
                         ← Back to videos
-                    </Link>
+                    </Link> */}
                     <h1>{video.title}</h1>
+                    <h2>{video.createdAt} • {video.id}/master.m3u8</h2>
                 </div>
 
                 <div className="player-wrapper">
