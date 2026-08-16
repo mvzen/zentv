@@ -70,6 +70,12 @@ img {
     background: rgba(17, 17, 24, 0.6);
 }
 
+.seperator {
+    display: inline-block;
+    margin: 0 0.5rem;
+    opacity: 0.5;
+}
+
 /* Header */
 
 .site-header {
@@ -228,7 +234,7 @@ img {
 
 .player-header h1 {
     margin: 0.75rem 0 0;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
 }
 

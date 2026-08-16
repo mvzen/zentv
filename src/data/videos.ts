@@ -2,17 +2,48 @@ export interface Video {
     id: string
     title: string
     song: string
+    createdBy: string
     createdAt: number
 }
 
 const BASE_URL = 'https://videos.mvzen.com'
 
 export const videos: Video[] = [
-    { id: 'flo60', title: 'Florence (60 ans)', song: 'Diamonds & Rust', createdAt: 2018 },
-    { id: 'lily80', title: 'Lily (80 ans)', song: 'The Sound of Silence', createdAt: 2022 },
-    { id: 'christine70', title: 'Christine (70 ans)', song: 'Telling Stories', createdAt: 2023 },
-    { id: 'coco40', title: 'Coco (40 ans)', song: 'On Ecrit sur les Murs', createdAt: 2026 },
-    { id: 'sensdelafamille', title: 'Coco - Sens de la famille', song: 'Le sens de la famille', createdAt: 2026 },
+    {
+        id: 'flo60',
+        title: 'Florence (60 ans)',
+        song: 'Joan Baez - Diamonds & Rust',
+        createdBy: 'Les Quatre Cousins',
+        createdAt: 2018
+    },
+    {
+        id: 'lily80',
+        title: 'Lily (80 ans)',
+        song: 'Simon & Garfunkel - The Sound of Silence',
+        createdBy: 'Les Quatre Cousins',
+        createdAt: 2022
+    },
+    {
+        id: 'christine70',
+        title: 'Christine (70 ans)',
+        song: 'Tracy Chapman - Telling Stories',
+        createdBy: 'Les Quatre Cousins',
+        createdAt: 2023
+    },
+    {
+        id: 'coco40',
+        title: 'Coco (40 ans)',
+        song: 'Kids United - On écrit sur les murs',
+        createdBy: 'Les Quatre Cousins',
+        createdAt: 2026
+    },
+    {
+        id: 'sensdelafamille',
+        title: 'Coco - Sens de la famille',
+        song: 'Grand Corps Malade - Le sens de la famille',
+        createdBy: 'Dad & Kids',
+        createdAt: 2026
+    },
 ]
 
 export function getStreamUrl(id: string): string {
