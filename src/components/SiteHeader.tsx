@@ -5,7 +5,7 @@ export function SiteHeader() {
         <header className="site-header discreet-surface">
             <div className="site-header__inner">
                 <span className="site-header__logo"><Link to="/">ZenTV</Link></span>
-                <span className="site-header__tagline">Adaptive video streaming playground</span>
+                <span className="site-header__tagline">Video streaming playground</span>
             </div>
         </header >
     )
