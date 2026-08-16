@@ -42,7 +42,11 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
                         ← Back to videos
                     </Link> */}
                     <h1>{video.title}</h1>
-                    <h2>{video.createdBy} ({video.createdAt}) <span className="seperator">|</span> {video.song}</h2>
+                    <h2>
+                        <span className="info">{video.createdBy} ({video.createdAt})</span>
+                        <span className="seperator">|</span>
+                        <span className="info">{video.song}</span>
+                    </h2>
                 </div>
 
                 <div className="player-wrapper">

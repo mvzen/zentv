@@ -104,7 +104,7 @@ img {
 
 .site-header__tagline {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 400;
 }
 
@@ -128,14 +128,14 @@ img {
 
 .gallery {
     padding: 3rem 1.5rem;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .gallery__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 /* Video card */
@@ -205,6 +205,12 @@ img {
     color: #fff;
     font-size: 1.5rem;
     box-shadow: 0 8px 24px var(--accent-glow);
+    transform: translateY(50%);
+    transition: transform 0.15s ease;
+}
+
+.video-card:hover .video-card__play {
+    transform: translateY(0);
 }
 
 .video-card__title {
@@ -245,12 +251,16 @@ img {
     color: var(--text-secondary);
 }
 
+.player-header .info {
+    display: inline-block;
+}
+
 .back-link {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     transition: color 0.15s ease;
 }
 
@@ -322,15 +332,19 @@ img {
         gap: 1rem;
     }
 
-    .player-content {
-        padding: 0 1rem 1rem;
-    }
-
     .player-header {
         padding-top: 1rem;
     }
 
     .player-header h1 {
         font-size: 1.25rem;
+    }
+
+    .player-header .info {
+        display: block;
+    }
+
+    .player-header .seperator {
+        display: none;
     }
 }
