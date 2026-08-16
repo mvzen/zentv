@@ -114,7 +114,7 @@ img {
     max-width: 1200px;
     margin-inline: auto;
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-align: center;
 }
 
@@ -203,10 +203,13 @@ img {
 
 .video-card__title {
     margin: 0;
-    padding: 0.875rem 1rem 1rem;
+    padding: 0.75rem 1rem 0.85rem;
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Player */
@@ -305,7 +308,7 @@ img {
     }
 
     .gallery {
-        padding: 0.75rem 1rem 2rem;
+        padding: 2rem;
     }
 
     .gallery__grid {
