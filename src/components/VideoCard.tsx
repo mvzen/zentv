@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import type { Video } from '../data/videos'
-import { getThumbnailUrl } from '../data/videos'
+import type { Video } from '../data/vod'
 
 interface VideoCardProps {
     video: Video
@@ -11,7 +10,7 @@ export function VideoCard({ video }: VideoCardProps) {
         <Link to={`/vod/${video.id}`} className="video-card">
             <div className="video-card__image-wrap">
                 <img
-                    src={getThumbnailUrl(video.id)}
+                    src={video.thumbnail}
                     alt={video.title}
                     className="video-card__image"
                     loading="lazy"

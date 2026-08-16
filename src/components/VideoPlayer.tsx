@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Hls from 'hls.js'
-import { SiteFooter } from './SiteFooter'
-import { SiteHeader } from './SiteHeader'
-import type { Video } from '../data/videos'
-import { getStreamUrl, getThumbnailUrl } from '../data/videos'
+import type { Video } from '../data/vod'
 
 interface VideoPlayerProps {
     video: Video
@@ -11,7 +8,6 @@ interface VideoPlayerProps {
 
 export function VideoPlayer({ video }: VideoPlayerProps) {
     const videoRef = useRef<HTMLVideoElement>(null)
-    const streamUrl = getStreamUrl(video.id)
 
     useEffect(() => {
         const element = videoRef.current
@@ -19,7 +15,7 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
 
         if (Hls.isSupported()) {
             const hls = new Hls()
-            hls.loadSource(streamUrl)
+            hls.loadSource(video.src)
             hls.attachMedia(element)
 
             return () => {
@@ -28,9 +24,9 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
         }
 
         if (element.canPlayType('application/vnd.apple.mpegurl')) {
-            element.src = streamUrl
+            element.src = video.src
         }
-    }, [streamUrl])
+    }, [video.src])
 
     return (
         <main className="player-content page-layout__main">
@@ -54,7 +50,7 @@ export function VideoPlayer({ video }: VideoPlayerProps) {
                     controls
                     playsInline
                     autoPlay
-                    poster={getThumbnailUrl(video.id)}
+                    poster={video.thumbnail}
                 />
             </div>
         </main >

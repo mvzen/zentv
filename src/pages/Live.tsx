@@ -4,7 +4,7 @@ import { SiteHeader } from '../components/SiteHeader'
 import { VideoPlayer } from '../components/VideoPlayer'
 import { getVideoById } from '../data/vod'
 
-export function Vod() {
+export function Live() {
     const { id } = useParams<{ id: string }>()
     const video = id ? getVideoById(id) : undefined
 
