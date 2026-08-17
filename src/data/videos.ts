@@ -8,6 +8,7 @@ export interface Video {
     type: 'asset' | 'live'
     src: string
     thumbnail?: string
+    duration?: number
     createdBy?: string
     createdAt?: number
 }
@@ -21,6 +22,7 @@ export const videos: Video[] = [
         type: 'asset',
         src: getStreamUrl('flo60'),
         thumbnail: getThumbnailUrl('flo60'),
+        duration: 203,
         createdBy: 'Les Quatre Cousins',
         createdAt: 2018
     },
@@ -32,6 +34,7 @@ export const videos: Video[] = [
         type: 'asset',
         src: getStreamUrl('lily80'),
         thumbnail: getThumbnailUrl('lily80'),
+        duration: 206,
         createdBy: 'Les Quatre Cousins',
         createdAt: 2022
     },
@@ -43,6 +46,7 @@ export const videos: Video[] = [
         type: 'asset',
         src: getStreamUrl('christine70'),
         thumbnail: getThumbnailUrl('christine70'),
+        duration: 255,
         createdBy: 'Les Quatre Cousins',
         createdAt: 2023
     },
@@ -54,6 +58,7 @@ export const videos: Video[] = [
         type: 'asset',
         src: getStreamUrl('coco40'),
         thumbnail: getThumbnailUrl('coco40'),
+        duration: 195,
         createdBy: 'Les Quatre Cousins',
         createdAt: 2026
     },
@@ -65,6 +70,7 @@ export const videos: Video[] = [
         type: 'asset',
         src: getStreamUrl('sensdelafamille'),
         thumbnail: getThumbnailUrl('sensdelafamille'),
+        duration: 199,
         createdBy: 'Dad & Kids',
         createdAt: 2026
     },

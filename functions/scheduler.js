@@ -1,4 +1,4 @@
-import { videos } from '../src/data/videos'
+import { videos, getVideoBySlug } from '../src/data/videos'
 
 // 1. Automatically triggered via Cron Trigger (executed by Cloudflare)
 export async function onScheduled({ request, env, ctx }) {
@@ -14,46 +14,61 @@ export async function onRequestGet(context) {
     });
 }
 
-// Main logic for sending the Slot to broadpeak.io
+// Main logic for sending the slots to broadpeak.io
 async function runScheduler(env) {
     const API_KEY = env.BROADPEAK_API_KEY;
-    const SERVICE_ID = env.BROADPEAK_SERVICE_ID;
-    const ASSET_1_ID = env.ASSET_1_ID;
+    const SERVICE_ID = getVideoBySlug('zentv1').broadpeakId
 
     const now = new Date();
     const startTime = now.toISOString();
 
-    const payload = {
-        name: "Slot Automatique Pages",
-        startTime: startTime,
-        duration: 300,
-        replacement: {
-            id: Number(ASSET_1_ID)
-        },
-        type: 'content',
-    };
+    getVideoAssets().map((asset) => {
 
-    try {
-        const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channel/${SERVICE_ID}/slots`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${API_KEY}`,
-                'Content-Type': 'application/json'
+        const payload = {
+            name: asset.name,
+            startTime: startTime,
+            duration: asset.duration,
+            replacement: {
+                id: asset.id
             },
-            body: JSON.stringify(payload)
-        });
+            type: 'content',
+        };
 
-        const data = await response.text();
+        try {
+            const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channel/${SERVICE_ID}/slots`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${API_KEY}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
 
-        if (!response.ok) {
-            console.error("Erreur Broadpeak:", data);
-            return { success: false, error: data };
+            const data = await response.text();
+
+            if (!response.ok) {
+                return { success: false, error: data };
+            }
+        } catch (error) {
+            console.error("Erreur d'exécution:", error);
+            return { success: false, error: error.message };
         }
+    });
 
-        console.log("Slot programmé avec succès !");
-        return { success: true, message: "Slot programmé" };
-    } catch (error) {
-        console.error("Erreur d'exécution:", error);
-        return { success: false, error: error.message };
-    }
+    return { success: true, message: "Slots programmé" };
+}
+
+function getVideoAssets() {
+    const assets = [];
+
+    videos.map((video) => {
+        if (video.type !== 'asset') return; // Skip if not an asset
+        assets.push({
+            id: video.broadpeakId,
+            name: video.title,
+            duration: video.duration,
+        });
+    });
+
+    return assets;
 }
