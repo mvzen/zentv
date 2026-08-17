@@ -64,6 +64,7 @@ function getVideoAssets() {
 
     videos.map((video) => {
         if (video.type !== 'asset') return; // Skip if not an asset
+        if (video.slug !== 'sensdelafamille') return; // Skip if not an asset
         assets.push({
             id: video.broadpeakId,
             name: video.title,
