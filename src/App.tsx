@@ -13,7 +13,7 @@ export function App() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const handleLogin = async (e) => {
+    const handleLogin = async (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         setError('');
 
