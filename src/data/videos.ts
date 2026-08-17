@@ -5,8 +5,8 @@ export interface Video {
     broadpeakId?: number
     title: string
     info: string
+    type: 'asset' | 'live'
     src: string
-    isLive?: boolean | false
     thumbnail?: string
     createdBy?: string
     createdAt?: number
@@ -18,6 +18,7 @@ export const videos: Video[] = [
         broadpeakId: 215524,
         title: 'Florence (60 ans)',
         info: 'Joan Baez - Diamonds & Rust',
+        type: 'asset',
         src: getStreamUrl('flo60'),
         thumbnail: getThumbnailUrl('flo60'),
         createdBy: 'Les Quatre Cousins',
@@ -28,6 +29,7 @@ export const videos: Video[] = [
         broadpeakId: 12346,
         title: 'Lily (80 ans)',
         info: 'Simon & Garfunkel - The Sound of Silence',
+        type: 'asset',
         src: getStreamUrl('lily80'),
         thumbnail: getThumbnailUrl('lily80'),
         createdBy: 'Les Quatre Cousins',
@@ -38,6 +40,7 @@ export const videos: Video[] = [
         broadpeakId: 213846,
         title: 'Christine (70 ans)',
         info: 'Tracy Chapman - Telling Stories',
+        type: 'asset',
         src: getStreamUrl('christine70'),
         thumbnail: getThumbnailUrl('christine70'),
         createdBy: 'Les Quatre Cousins',
@@ -48,6 +51,7 @@ export const videos: Video[] = [
         broadpeakId: 215523,
         title: 'Coco (40 ans)',
         info: 'Kids United - On écrit sur les murs',
+        type: 'asset',
         src: getStreamUrl('coco40'),
         thumbnail: getThumbnailUrl('coco40'),
         createdBy: 'Les Quatre Cousins',
@@ -58,6 +62,7 @@ export const videos: Video[] = [
         broadpeakId: 215525,
         title: 'Coco - Sens de la famille',
         info: 'Grand Corps Malade - Le sens de la famille',
+        type: 'asset',
         src: getStreamUrl('sensdelafamille'),
         thumbnail: getThumbnailUrl('sensdelafamille'),
         createdBy: 'Dad & Kids',
@@ -68,9 +73,9 @@ export const videos: Video[] = [
         broadpeakId: 83287,
         title: 'ZenTV1',
         info: 'Live stream',
+        type: 'live',
         src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
         thumbnail: getThumbnailUrl('zentv1', 'gif'),
-        isLive: true
     },
 ]
 

@@ -13,7 +13,7 @@ export function Gallery() {
                 <h2>VOD / replay</h2>
                 <div className="gallery__grid">
                     {videos.map((video) => (
-                        (!video.isLive && <VideoCard key={video.id} video={video} />)
+                        (video.type === 'asset' && <VideoCard key={video.slug} video={video} />)
                     ))}
                 </div>
 
@@ -22,7 +22,7 @@ export function Gallery() {
                 <h2>Live streams</h2>
                 <div className="gallery__grid">
                     {videos.map((video) => (
-                        (video.isLive && <VideoCard key={video.id} video={video} />)
+                        (video.type === 'live' && <VideoCard key={video.slug} video={video} />)
                     ))}
                 </div>
 

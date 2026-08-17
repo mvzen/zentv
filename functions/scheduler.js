@@ -1,4 +1,4 @@
-// functions/scheduler.js
+import { videos } from '../src/data/videos'
 
 // 1. Automatically triggered via Cron Trigger (executed by Cloudflare)
 export async function onScheduled({ request, env, ctx }) {

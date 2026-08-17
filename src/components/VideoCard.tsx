@@ -22,7 +22,7 @@ export function VideoCard({ video }: VideoCardProps) {
                         ▶
                     </span>
                 </div>
-                {video.isLive && (
+                {video.type === 'live' && (
                     <span className="video-card__live" aria-hidden="true">LIVE</span>
                 )}
             </div>
