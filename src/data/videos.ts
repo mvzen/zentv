@@ -1,7 +1,8 @@
 const BASE_URL = 'https://videos.mvzen.com'
 
 export interface Video {
-    id: string
+    slug: string
+    broadpeakId?: number
     title: string
     info: string
     src: string
@@ -13,7 +14,8 @@ export interface Video {
 
 export const videos: Video[] = [
     {
-        id: 'flo60',
+        slug: 'flo60',
+        broadpeakId: 215524,
         title: 'Florence (60 ans)',
         info: 'Joan Baez - Diamonds & Rust',
         src: getStreamUrl('flo60'),
@@ -22,7 +24,8 @@ export const videos: Video[] = [
         createdAt: 2018
     },
     {
-        id: 'lily80',
+        slug: 'lily80',
+        broadpeakId: 12346,
         title: 'Lily (80 ans)',
         info: 'Simon & Garfunkel - The Sound of Silence',
         src: getStreamUrl('lily80'),
@@ -31,7 +34,8 @@ export const videos: Video[] = [
         createdAt: 2022
     },
     {
-        id: 'christine70',
+        slug: 'christine70',
+        broadpeakId: 213846,
         title: 'Christine (70 ans)',
         info: 'Tracy Chapman - Telling Stories',
         src: getStreamUrl('christine70'),
@@ -40,7 +44,8 @@ export const videos: Video[] = [
         createdAt: 2023
     },
     {
-        id: 'coco40',
+        slug: 'coco40',
+        broadpeakId: 215523,
         title: 'Coco (40 ans)',
         info: 'Kids United - On écrit sur les murs',
         src: getStreamUrl('coco40'),
@@ -49,7 +54,8 @@ export const videos: Video[] = [
         createdAt: 2026
     },
     {
-        id: 'sensdelafamille',
+        slug: 'sensdelafamille',
+        broadpeakId: 215525,
         title: 'Coco - Sens de la famille',
         info: 'Grand Corps Malade - Le sens de la famille',
         src: getStreamUrl('sensdelafamille'),
@@ -58,29 +64,23 @@ export const videos: Video[] = [
         createdAt: 2026
     },
     {
-        id: 'live-zentv',
-        title: 'Zen TV1',
+        slug: 'zentv1',
+        broadpeakId: 83287,
+        title: 'ZenTV1',
         info: 'Live stream',
-        src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
-        isLive: true
-    },
-    {
-        id: 'live-bpio',
-        title: 'Test Broadpeak.io',
-        info: 'Broadpeak.io test live stream',
         src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
         isLive: true
     },
 ]
 
-export function getStreamUrl(id: string): string {
-    return `${BASE_URL}/${id}/master.m3u8`
+export function getStreamUrl(slug: string): string {
+    return `${BASE_URL}/${slug}/master.m3u8`
 }
 
-export function getThumbnailUrl(id: string): string {
-    return `${BASE_URL}/${id}/preview.jpg`
+export function getThumbnailUrl(slug: string): string {
+    return `${BASE_URL}/${slug}/preview.jpg`
 }
 
-export function getVideoById(id: string): Video | undefined {
-    return videos.find((video) => video.id === id)
+export function getVideoBySlug(slug: string): Video | undefined {
+    return videos.find((video) => video.slug === slug)
 }

@@ -2,11 +2,11 @@ import { useParams } from 'react-router-dom'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
 import { VideoPlayer } from '../components/VideoPlayer'
-import { getVideoById } from '../data/videos'
+import { getVideoBySlug } from '../data/videos'
 
 export function Play() {
     const { id } = useParams<{ id: string }>()
-    const video = id ? getVideoById(id) : undefined
+    const video = id ? getVideoBySlug(id) : undefined
 
     if (!video) {
         return 'Video not found'

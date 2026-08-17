@@ -34,6 +34,7 @@ export function VideoPlayer({ video, controls = true }: VideoPlayerProps) {
             ref={videoRef}
             className="video-element"
             controls={controls}
+            muted={!controls}
             playsInline
             autoPlay
             poster={video.thumbnail}

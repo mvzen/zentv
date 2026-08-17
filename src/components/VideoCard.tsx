@@ -8,7 +8,7 @@ interface VideoCardProps {
 
 export function VideoCard({ video }: VideoCardProps) {
     return (
-        <Link to={`/play/${video.id}`} className="video-card">
+        <Link to={`/play/${video.slug}`} className="video-card">
             <div className="video-card__image-wrap">
                 {video.thumbnail ? (
                     <img
