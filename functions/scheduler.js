@@ -33,7 +33,7 @@ async function runScheduler(env) {
     };
 
     try {
-        const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channels/${SERVICE_ID}/slots`, {
+        const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channel/${SERVICE_ID}/slots`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${API_KEY}`,
