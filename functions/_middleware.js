@@ -4,9 +4,9 @@ export async function onRequest(context) {
     const { request, env } = context
     const url = new URL(request.url)
 
-    // Allow access to the login API endpoint without a cookie
-    if (url.pathname === '/api/login') {
-        return await context.next()
+    // Allow login AND logout endpoints without requiring an active cookie
+    if (url.pathname === '/api/login' || url.pathname === '/api/logout') {
+        return await context.next();
     }
 
     const REQUIRED_PASSWORD = 'hugoliam'

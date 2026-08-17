@@ -149,6 +149,10 @@ hr {
     text-align: center;
 }
 
+.site-footer__text a:hover {
+    color: #fff;
+}
+
 /* Gallery */
 
 .page-layout__main h2 {
