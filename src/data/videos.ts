@@ -69,6 +69,7 @@ export const videos: Video[] = [
         title: 'ZenTV1',
         info: 'Live stream',
         src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
+        thumbnail: getThumbnailUrl('zentv1', 'gif'),
         isLive: true
     },
 ]
@@ -77,8 +78,8 @@ export function getStreamUrl(slug: string): string {
     return `${BASE_URL}/${slug}/master.m3u8`
 }
 
-export function getThumbnailUrl(slug: string): string {
-    return `${BASE_URL}/${slug}/preview.jpg`
+export function getThumbnailUrl(slug: string, extension: string = 'jpg'): string {
+    return `${BASE_URL}/${slug}/preview.${extension}`
 }
 
 export function getVideoBySlug(slug: string): Video | undefined {

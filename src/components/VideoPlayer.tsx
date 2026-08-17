@@ -4,10 +4,9 @@ import type { Video } from '../data/videos'
 
 interface VideoPlayerProps {
     video: Video
-    controls?: boolean
 }
 
-export function VideoPlayer({ video, controls = true }: VideoPlayerProps) {
+export function VideoPlayer({ video }: VideoPlayerProps) {
     const videoRef = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {
@@ -33,8 +32,7 @@ export function VideoPlayer({ video, controls = true }: VideoPlayerProps) {
         <video
             ref={videoRef}
             className="video-element"
-            controls={controls}
-            muted={!controls}
+            controls
             playsInline
             autoPlay
             poster={video.thumbnail}
