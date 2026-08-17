@@ -1,7 +1,7 @@
 // functions/api/login.js
 export async function onRequestPost(context) {
     const { request, env } = context
-    const REQUIRED_PASSWORD = 'hugoliam'
+    const REQUIRED_PASSWORD = env.PASSWORD
 
     try {
         const { password } = await request.json()
