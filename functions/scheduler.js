@@ -22,11 +22,10 @@ async function runScheduler(env) {
     let currentTime = new Date();
 
     for (const asset of getVideoAssets()) {
-        const startTime = currentTime.toISOString();
 
         const payload = {
             name: asset.name,
-            startTime: startTime,
+            startTime: currentTime.toISOString(),
             duration: asset.duration,
             replacement: {
                 id: asset.id
