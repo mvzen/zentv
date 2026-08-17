@@ -26,10 +26,11 @@ async function runScheduler(env) {
     const payload = {
         name: "Slot Automatique Pages",
         startTime: startTime,
-        duration: 300, // Durée en secondes
+        duration: 300,
         replacement: {
             id: Number(ASSET_1_ID)
-        }
+        },
+        type: 'content',
     };
 
     try {
