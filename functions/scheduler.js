@@ -28,12 +28,12 @@ async function runScheduler(env) {
         startTime: startTime,
         duration: 300, // Durée en secondes
         replacement: {
-            id: ASSET_1_ID
+            id: Number(ASSET_1_ID)
         }
     };
 
     try {
-        const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channel/${SERVICE_ID}/slots`, {
+        const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channels/${SERVICE_ID}/slots`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${API_KEY}`,
