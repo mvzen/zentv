@@ -16,8 +16,8 @@ export async function onRequestGet(context) {
 
 // Logique principale d'envoi du Slot vers broadpeak.io
 async function runScheduler(env) {
-    const SERVICE_ID = env.BROADPEAK_SERVICE_ID;
     const API_KEY = env.BROADPEAK_API_KEY;
+    const SERVICE_ID = env.BROADPEAK_SERVICE_ID;
     const ASSET_1_ID = env.ASSET_1_ID;
 
     const now = new Date();
@@ -33,7 +33,7 @@ async function runScheduler(env) {
     };
 
     try {
-        const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channels/${SERVICE_ID}/slots`, {
+        const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channel/${SERVICE_ID}/slots`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${API_KEY}`,
