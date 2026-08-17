@@ -17,9 +17,9 @@ export async function onRequestGet(context) {
 // Main logic for sending the slots to broadpeak.io
 async function runScheduler(env) {
     const API_KEY = env.BROADPEAK_API_KEY;
-    const SERVICE_ID = getVideoBySlug('zentv1').broadpeakId
+    const SERVICE_ID = getVideoBySlug('zentv1').broadpeakId;
 
-    let currentTime = new Date();
+    let currentTime = new Date(Date.now() + 30 * 1000);
 
     for (const asset of getVideoAssets()) {
 
