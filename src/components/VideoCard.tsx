@@ -23,7 +23,7 @@ export function VideoCard({ video }: VideoCardProps) {
                     </span>
                 </div>
                 {video.type === 'live' && (
-                    <span className="video-card__live" aria-hidden="true">LIVE</span>
+                    <span className="live-tag" aria-hidden="true">LIVE</span>
                 )}
             </div>
             <h3 className="video-card__title">{video.title}</h3>

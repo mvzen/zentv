@@ -1,41 +1,26 @@
-import { useEffect, useRef } from 'react'
-import Hls from 'hls.js'
-import type { Video } from '../data/videos'
+'use client';
 
-interface VideoPlayerProps {
+import '@videojs/react/video/minimal-skin.css';
+import { createPlayer, videoFeatures, Poster } from '@videojs/react';
+import { MinimalVideoSkin } from '@videojs/react/video';
+import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
+import type { Video } from '../data/videos';
+
+const Player = createPlayer({ features: videoFeatures });
+
+interface MyPlayerProps {
     video: Video
 }
 
-export function VideoPlayer({ video }: VideoPlayerProps) {
-    const videoRef = useRef<HTMLVideoElement>(null)
-
-    useEffect(() => {
-        const element = videoRef.current
-        if (!element) return
-
-        if (Hls.isSupported()) {
-            const hls = new Hls()
-            hls.loadSource(video.src)
-            hls.attachMedia(element)
-
-            return () => {
-                hls.destroy()
-            }
-        }
-
-        if (element.canPlayType('application/vnd.apple.mpegurl')) {
-            element.src = video.src
-        }
-    }, [video.src])
-
+export const VideoPlayer = ({ video }: MyPlayerProps) => {
     return (
-        <video
-            ref={videoRef}
-            className="video-element"
-            controls
-            playsInline
-            autoPlay
-            poster={video.thumbnail}
-        />
-    )
-}
+        <Player.Provider>
+            <Player.Container style={{ width: '100%', aspectRatio: '16/9' }}>
+                <MinimalVideoSkin>
+                    <HlsJsVideo src={video.src} autoPlay playsInline />
+                    <Poster className="media-poster" src={video.thumbnail} />
+                </MinimalVideoSkin>
+            </Player.Container>
+        </Player.Provider>
+    );
+};

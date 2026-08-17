@@ -7,27 +7,27 @@ export function Gallery() {
     return (
         <div className="page-layout">
             <SiteHeader />
+            <main className="page-layout__main">
+                <div className="gallery">
 
-            <main className="gallery page-layout__main">
+                    <h2>VOD / replay</h2>
+                    <div className="gallery__grid">
+                        {videos.map((video) => (
+                            (video.type === 'asset' && <VideoCard key={video.slug} video={video} />)
+                        ))}
+                    </div>
 
-                <h2>VOD / replay</h2>
-                <div className="gallery__grid">
-                    {videos.map((video) => (
-                        (video.type === 'asset' && <VideoCard key={video.slug} video={video} />)
-                    ))}
+                    <hr />
+
+                    <h2>Live streams</h2>
+                    <div className="gallery__grid">
+                        {videos.map((video) => (
+                            (video.type === 'live' && <VideoCard key={video.slug} video={video} />)
+                        ))}
+                    </div>
+
                 </div>
-
-                <hr />
-
-                <h2>Live streams</h2>
-                <div className="gallery__grid">
-                    {videos.map((video) => (
-                        (video.type === 'live' && <VideoCard key={video.slug} video={video} />)
-                    ))}
-                </div>
-
             </main>
-
             <SiteFooter />
         </div>
     )

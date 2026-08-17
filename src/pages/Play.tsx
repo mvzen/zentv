@@ -15,21 +15,28 @@ export function Play() {
     return (
         <div className="page-layout">
             <SiteHeader />
-            <main className="player-content page-layout__main">
-                <div className="player-header">
-                    <h1>{video.title}</h1>
-                    <h2>
-                        {video.createdBy && (
-                            <>
-                                <span className="info">{video.createdBy} ({video.createdAt})</span>
-                                <span className="seperator">|</span>
-                            </>
-                        )}
-                        <span className="info">{video.info}</span>
-                    </h2>
-                </div>
-                <div className="player-wrapper">
-                    <VideoPlayer video={video} />
+            <main className="page-layout__main">
+                <div className="player-content">
+                    <div className="player-header">
+                        <h1>
+                            <span className="title">{video.title}</span>
+                            {video.type === 'live' && (
+                                <span className="live-tag" aria-hidden="true">LIVE</span>
+                            )}
+                        </h1>
+                        <h2>
+                            {video.createdBy && (
+                                <>
+                                    <span className="info">{video.createdBy} ({video.createdAt})</span>
+                                    <span className="seperator">|</span>
+                                </>
+                            )}
+                            <span className="info">{video.info}</span>
+                        </h2>
+                    </div>
+                    <div className={'player-wrapper' + (video.type === 'live' ? ' is-live' : '')}>
+                        <VideoPlayer video={video} />
+                    </div>
                 </div>
             </main >
             <SiteFooter />
