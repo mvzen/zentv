@@ -19,10 +19,10 @@ async function runScheduler(env) {
     const API_KEY = env.BROADPEAK_API_KEY;
     const SERVICE_ID = getVideoBySlug('zentv1').broadpeakId
 
-    const now = new Date();
-    const startTime = now.toISOString();
+    let currentTime = new Date();
 
-    getVideoAssets().map((asset) => {
+    for (const asset of getVideoAssets()) {
+        const startTime = currentTime.toISOString();
 
         const payload = {
             name: asset.name,
@@ -53,7 +53,9 @@ async function runScheduler(env) {
             console.error("Erreur d'exécution:", error);
             return { success: false, error: error.message };
         }
-    });
+
+        currentTime = new Date(currentTime.getTime() + asset.duration * 1000);
+    }
 
     return { success: true, message: "Slots programmé" };
 }
