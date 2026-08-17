@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import '@videojs/react/video/minimal-skin.css';
-import { createPlayer, videoFeatures, Poster } from '@videojs/react';
-import { MinimalVideoSkin } from '@videojs/react/video';
-import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
-import type { Video } from '../data/videos';
+import '@videojs/react/video/minimal-skin.css'
+import { createPlayer, videoFeatures, Poster } from '@videojs/react'
+import { MinimalVideoSkin } from '@videojs/react/video'
+import { HlsJsVideo } from '@videojs/react/media/hlsjs-video'
+import type { Video } from '../data/videos'
 
-const Player = createPlayer({ features: videoFeatures });
+const Player = createPlayer({ features: videoFeatures })
 
 interface MyPlayerProps {
     video: Video
@@ -22,5 +22,5 @@ export const VideoPlayer = ({ video }: MyPlayerProps) => {
                 </MinimalVideoSkin>
             </Player.Container>
         </Player.Provider>
-    );
-};
+    )
+}

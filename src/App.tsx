@@ -8,29 +8,29 @@ import { Play } from './pages/Play'
 export function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(() => {
-        return localStorage.getItem('is_logged_in') === 'true';
-    });
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+        return localStorage.getItem('is_logged_in') === 'true'
+    })
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
 
     const handleLogin = async (e: React.SubmitEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setError('');
+        e.preventDefault()
+        setError('')
 
         const res = await fetch('/api/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ password }),
-        });
+        })
 
         if (res.ok) {
             localStorage.setItem('is_logged_in', 'true');
-            setIsAuthenticated(true);
-            window.location.reload();
+            setIsAuthenticated(true)
+            window.location.reload()
         } else {
-            setError('Incorrect password');
+            setError('Incorrect password')
         }
-    };
+    }
 
     if (!isAuthenticated) {
         return (

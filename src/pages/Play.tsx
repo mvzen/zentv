@@ -38,7 +38,7 @@ export function Play() {
                         <VideoPlayer video={video} />
                     </div>
                 </div>
-            </main >
+            </main>
             <SiteFooter />
         </div >
     )
