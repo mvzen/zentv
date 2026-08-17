@@ -102,6 +102,7 @@ hr {
 }
 
 .site-header__logo {
+    font-family: 'Geomini', sans-serif;
     font-size: 1.75rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -114,6 +115,7 @@ hr {
 
 .site-header__tagline {
     color: var(--text-secondary);
+    font-family: 'Geomini', sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
 }
@@ -138,6 +140,7 @@ hr {
 
 .gallery h2 {
     margin: 0 0 1.5rem;
+    font-family: 'Geomini', sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
 }
@@ -255,6 +258,7 @@ hr {
 
 .player-header h1 {
     margin: 0;
+    font-family: 'Geomini', sans-serif;
     font-size: 1.75rem;
     font-weight: 600;
 }
