@@ -1,11 +1,11 @@
 // functions/scheduler.js
 
-// 1. Déclenchement automatique via Cron Trigger (exécuté par Cloudflare)
+// 1. Automatically triggered via Cron Trigger (executed by Cloudflare)
 export async function onScheduled({ request, env, ctx }) {
     await runScheduler(env);
 }
 
-// 2. Déclenchement manuel via HTTP GET (pratique pour tester depuis votre navigateur ou Postman)
+// 2. Manually triggered via HTTP GET (useful for testing from your browser or Postman)
 export async function onRequestGet(context) {
     const { env } = context;
     const result = await runScheduler(env);
@@ -14,7 +14,7 @@ export async function onRequestGet(context) {
     });
 }
 
-// Logique principale d'envoi du Slot vers broadpeak.io
+// Main logic for sending the Slot to broadpeak.io
 async function runScheduler(env) {
     const API_KEY = env.BROADPEAK_API_KEY;
     const SERVICE_ID = env.BROADPEAK_SERVICE_ID;
