@@ -9,7 +9,7 @@ export async function onRequest(context) {
         return await context.next();
     }
 
-    const REQUIRED_PASSWORD = env.PASSWORD
+    const REQUIRED_PASSWORD = env.SITE_PASSWORD
     const cookieHeader = request.headers.get('Cookie') || ''
 
     // Check if the auth cookie matches the expected password
