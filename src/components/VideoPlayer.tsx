@@ -17,8 +17,12 @@ export const VideoPlayer = ({ video }: MyPlayerProps) => {
         <Player.Provider>
             <Player.Container style={{ width: '100%', aspectRatio: '16/9' }}>
                 <MinimalVideoSkin>
-                    <HlsJsVideo src={video.src} autoPlay playsInline />
-                    <Poster className="media-poster" src={video.thumbnail} />
+                    <HlsJsVideo
+                        src={video.src}
+                        autoPlay
+                        playsInline
+                    />
+                    {video.type !== 'live' && <Poster className="media-poster" src={video.thumbnail} />}
                 </MinimalVideoSkin>
             </Player.Container>
         </Player.Provider>

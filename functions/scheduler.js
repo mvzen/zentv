@@ -1,11 +1,9 @@
 import { videos, getVideoBySlug } from '../src/data/videos'
 
-// 1. Automatically triggered via Cron Trigger (executed by Cloudflare)
 export async function onScheduled({ request, env, ctx }) {
     await runScheduler(env)
 }
 
-// 2. Manually triggered via HTTP GET (useful for testing from your browser or Postman)
 export async function onRequestGet(context) {
     const { env } = context
     const result = await runScheduler(env)
@@ -14,12 +12,12 @@ export async function onRequestGet(context) {
     });
 }
 
-// Main logic for sending the slots to broadpeak.io
 async function runScheduler(env) {
+    const API_ROOT = env.BROADPEAK_API_ROOT
     const API_KEY = env.BROADPEAK_API_KEY
     const SERVICE_ID = getVideoBySlug('zentv1').broadpeakId
 
-    let currentTime = new Date(Date.now() + 30 * 1000)
+    let currentTime = new Date(Date.now())
 
     for (const asset of getVideoAssets()) {
 
@@ -29,12 +27,11 @@ async function runScheduler(env) {
             duration: asset.duration,
             replacement: {
                 id: asset.id
-            },
-            type: 'content',
+            }
         }
 
         try {
-            const response = await fetch(`https://api.broadpeak.io/v1/services/virtual-channel/${SERVICE_ID}/slots`, {
+            const response = await fetch(`${API_ROOT}/services/content-replacement/${SERVICE_ID}/slots`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${API_KEY}`,

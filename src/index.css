@@ -360,6 +360,44 @@ hr {
     color: var(--text-secondary);
 }
 
+.live-controls {
+    border-color: var(--border);
+    border-radius: var(--radius);
+    margin: 3rem 0 0;
+    padding: 1.5rem 1rem;
+}
+
+.live-controls legend {
+    color: var(--text-secondary);
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0 0.5rem;
+}
+
+.live-controls .buttons {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.live-controls button {
+    background-color: rgba(255, 255, 255, 0.125);
+    font-size: 0.875rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.live-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.live-controls button:active {
+    transform: translateY(1px);
+}
+
 @media (max-width: 640px) {
     .site-header__inner {
         flex-wrap: wrap;

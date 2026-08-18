@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import { LiveControls } from '../components/LiveControls'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
 import { VideoPlayer } from '../components/VideoPlayer'
@@ -17,6 +18,7 @@ export function Play() {
             <SiteHeader />
             <main className="page-layout__main">
                 <div className="player-content">
+
                     <div className="player-header">
                         <h1>
                             <span className="title">{video.title}</span>
@@ -31,12 +33,16 @@ export function Play() {
                                     <span className="seperator">|</span>
                                 </>
                             )}
-                            <span className="info">{video.info}</span>
+                            {video.info && <span className="info">{video.info}</span>}
                         </h2>
                     </div>
+
                     <div className={'player-wrapper' + (video.type === 'live' ? ' is-live' : '')}>
                         <VideoPlayer video={video} />
                     </div>
+
+                    {video.type === 'live' && <LiveControls />}
+
                 </div>
             </main>
             <SiteFooter />

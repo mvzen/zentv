@@ -4,7 +4,7 @@ export interface Video {
     slug: string
     broadpeakId?: number
     title: string
-    info: string
+    info?: string
     type: 'asset' | 'live'
     src: string
     thumbnail?: string
@@ -76,11 +76,10 @@ export const videos: Video[] = [
     },
     {
         slug: 'zentv1',
-        broadpeakId: 83287,
+        broadpeakId: 83498,
         title: 'ZenTV1',
-        info: 'Live stream',
         type: 'live',
-        src: 'https://stream.broadpeak.io/96b250a90d3cf086a2ae6aa4f5be592d/bpk-tv/cycling/default/index.m3u8',
+        src: 'https://stream.broadpeak.io/96b250a90d3cf0869f46237472e7183d/bpk-tv/cycling/default/index.m3u8',
         thumbnail: getThumbnailUrl('zentv1', 'gif'),
     },
 ]

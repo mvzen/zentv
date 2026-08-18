@@ -8,12 +8,10 @@ export function SiteFooter() {
         e.preventDefault();
 
         try {
-            // 1. Invalidate server-side HttpOnly cookie
             await fetch('/api/logout', { method: 'POST' })
         } catch (err) {
             console.error('Logout request failed:', err)
         } finally {
-            // 2. Clear client storage & reload page to show login screen
             localStorage.removeItem('is_logged_in')
             window.location.href = '/'
         }
