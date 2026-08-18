@@ -20,7 +20,9 @@ async function replaceContent(env) {
         startTime: currentTime.toISOString(),
         duration: 300, // 5 minutes
         replacement: {
-            id: 215573
+            id: 215573 // blackout
+            // id: 215586 // sintel
+            // id: 215525 // sensdelafamile
         }
     }
 

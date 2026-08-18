@@ -4,10 +4,14 @@ export function LiveControls() {
 
     const handleAction = async (action: string, e: React.SyntheticEvent) => {
         e.preventDefault()
+        const buttons = document.getElementsByClassName('buttons')[0]
+        buttons.classList.add('is-disabled')
         try {
             await fetch(`/${action}`)
         } catch (err) {
             console.error('Request failed:', err)
+        } finally {
+            buttons.classList.remove('is-disabled')
         }
     }
 
