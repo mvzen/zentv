@@ -173,9 +173,10 @@ hr {
         border-color 0.2s ease;
 }
 
-.video-card:hover {
-    /* transform: translateY(-4px); */
-    box-shadow: var(--shadow), 0 0 32px rgba(0, 234, 255, 0.35);
+@media (hover: hover) {
+    .video-card:hover {
+        box-shadow: var(--shadow), 0 0 32px rgba(0, 234, 255, 0.35);
+    }
 }
 
 .video-card:active {

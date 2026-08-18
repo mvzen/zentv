@@ -71,7 +71,7 @@ export const videos: Video[] = [
         src: getStreamUrl('sensdelafamille'),
         thumbnail: getThumbnailUrl('sensdelafamille'),
         duration: 199,
-        createdBy: 'Dad & Kids',
+        createdBy: 'Hugo / Liam / Mark',
         createdAt: 2026
     },
     {
