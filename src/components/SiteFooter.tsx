@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 export function SiteFooter() {
 
@@ -25,7 +24,7 @@ export function SiteFooter() {
             <p className="site-footer__text">
                 <span>© Mark Veldhuizen</span>
                 <span className="seperator">|</span>
-                <Link to="https://tv.mvzen.com">tv.mvzen.com</Link>
+                <a href="https://tv.mvzen.com">tv.mvzen.com</a>
                 {isLoggedIn && (
                     <>
                         <span className="seperator">|</span>
