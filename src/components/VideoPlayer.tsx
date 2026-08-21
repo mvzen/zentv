@@ -21,6 +21,7 @@ export const VideoPlayer = ({ video }: MyPlayerProps) => {
                         src={video.src}
                         autoPlay
                         playsInline
+                        x-webkit-airplay="allow"
                     />
                     {video.type !== 'live' && <Poster className="media-poster" src={video.thumbnail} />}
                 </MinimalVideoSkin>
