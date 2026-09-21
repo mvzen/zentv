@@ -54,4 +54,4 @@ ffmpeg -i ../markanne40.mp4 \
 ```
 
 ## Sync R2 Storage
-`rclone sync . r2:zenvideos`
+`rclone sync . r2:zenvideos -P`
