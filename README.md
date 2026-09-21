@@ -52,3 +52,6 @@ ffmpeg -i ../markanne40.mp4 \
   -var_stream_map "v:0,a:0 v:1,a:1 v:2,a:2" \
   v%v/index.m3u8
 ```
+
+## Sync R2 Storage
+`rclone sync . r2:zenvideos`
