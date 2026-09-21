@@ -51,6 +51,17 @@ export const videos: Video[] = [
         createdAt: 2023
     },
     {
+        slug: 'markanne40',
+        broadpeakId: 0,
+        title: 'Mark & Coco (40 ans)',
+        type: 'asset',
+        src: getStreamUrl('markanne40'),
+        thumbnail: getThumbnailUrl('markanne40'),
+        duration: 1016,
+        createdBy: 'Corinne',
+        createdAt: 2025
+    },
+    {
         slug: 'coco40',
         broadpeakId: 215523,
         title: 'Coco (40 ans)',
@@ -75,13 +86,25 @@ export const videos: Video[] = [
         createdAt: 2026
     },
     {
-        slug: 'zentv1',
-        broadpeakId: 83498,
-        title: 'ZenTV1',
-        type: 'live',
-        src: 'https://stream.broadpeak.io/96b250a90d3cf0869f46237472e7183d/bpk-tv/cycling/default/index.m3u8',
-        thumbnail: getThumbnailUrl('zentv1', 'gif'),
+        slug: '10minside',
+        broadpeakId: 0,
+        title: 'Coco - 10 minutes inside',
+        info: 'Reportage 40 ans de Coco',
+        type: 'asset',
+        src: getStreamUrl('10minside'),
+        thumbnail: getThumbnailUrl('10minside'),
+        duration: 880,
+        createdBy: 'Mark',
+        createdAt: 2026
     },
+    // {
+    //     slug: 'zentv1',
+    //     broadpeakId: 83498,
+    //     title: 'ZenTV1',
+    //     type: 'live',
+    //     src: 'https://stream.broadpeak.io/96b250a90d3cf0869f46237472e7183d/bpk-tv/cycling/default/index.m3u8',
+    //     thumbnail: getThumbnailUrl('zentv1', 'gif'),
+    // },
 ]
 
 export function getStreamUrl(slug: string): string {
