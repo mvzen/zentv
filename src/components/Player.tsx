@@ -13,13 +13,25 @@ interface MyPlayerProps {
 }
 
 export const Player = ({ video }: MyPlayerProps) => {
+    const containerProps = {
+        style: {
+            width: '100%',
+            aspectRatio: '16/9',
+        },
+    }
+
+    const videoProps = {
+        src: video.src,
+        autoPlay: true,
+        playsInline: true,
+    }
 
     if (video.type === 'live') {
         return (
             <LiveVideoPlayer>
-                <Container style={{ width: '100%', aspectRatio: '16/9' }}>
+                <Container {...containerProps}>
                     <MinimalLiveVideoSkin>
-                        <HlsJsVideo src={video.src} autoPlay playsInline />
+                        <HlsJsVideo {...videoProps} />
                     </MinimalLiveVideoSkin>
                 </Container>
             </LiveVideoPlayer>
@@ -27,9 +39,9 @@ export const Player = ({ video }: MyPlayerProps) => {
     } else {
         return (
             <VideoPlayer poster={video.thumbnail}>
-                <Container style={{ width: '100%', aspectRatio: '16/9' }}>
+                <Container {...containerProps}>
                     <MinimalVideoSkin>
-                        <HlsJsVideo src={video.src} autoPlay playsInline />
+                        <HlsJsVideo {...videoProps} />
                     </MinimalVideoSkin>
                 </Container>
             </VideoPlayer>
