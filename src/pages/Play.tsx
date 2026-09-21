@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { LiveControls } from '../components/LiveControls'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
-import { VideoPlayer } from '../components/VideoPlayer'
+import { Player } from '../components/Player'
 import { getVideoBySlug } from '../data/videos'
 
 export function Play() {
@@ -38,7 +38,7 @@ export function Play() {
                     </div>
 
                     <div className={'player-wrapper' + (video.type === 'live' ? ' is-live' : '')}>
-                        <VideoPlayer video={video} />
+                        <Player video={video} />
                     </div>
 
                     {video.type === 'live' && <LiveControls />}
