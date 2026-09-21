@@ -1,9 +1,9 @@
 'use client'
 
-import '@videojs/react/video/minimal-skin.css';
-import { Container } from '@videojs/react';
-import { VideoPlayer, MinimalVideoSkin } from '@videojs/react/video';
-import { HlsJsVideo } from '@videojs/react/media/hlsjs-video';
+import '@videojs/react/video/minimal-skin.css'
+import { Container } from '@videojs/react'
+import { VideoPlayer, MinimalVideoSkin } from '@videojs/react/video'
+import { HlsJsVideo } from '@videojs/react/media/hlsjs-video'
 import type { Video } from '../data/videos'
 
 interface MyPlayerProps {
