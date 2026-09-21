@@ -53,7 +53,7 @@ export const videos: Video[] = [
     {
         slug: 'markanne40',
         broadpeakId: 0,
-        title: 'Mark & Coco (40 ans)',
+        title: 'Mark & Anne (40 ans)',
         type: 'asset',
         src: getStreamUrl('markanne40'),
         thumbnail: getThumbnailUrl('markanne40'),
