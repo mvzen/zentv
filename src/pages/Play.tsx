@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { LiveControls } from '../components/LiveControls'
+// import { LiveControls } from '../components/LiveControls'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
 import { Player } from '../components/Player'
@@ -41,7 +41,7 @@ export function Play() {
                         <Player video={video} />
                     </div>
 
-                    {video.type === 'live' && <LiveControls />}
+                    {/* {video.type === 'live' && <LiveControls />} */}
 
                 </div>
             </main>

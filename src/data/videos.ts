@@ -122,14 +122,14 @@ export const videos: Video[] = [
         createdBy: 'Mark',
         createdAt: 2026
     },
-    // {
-    //     slug: 'zentv1',
-    //     broadpeakId: 83498,
-    //     title: 'ZenTV1',
-    //     type: 'live',
-    //     src: 'https://stream.broadpeak.io/96b250a90d3cf0869f46237472e7183d/bpk-tv/cycling/default/index.m3u8',
-    //     thumbnail: getThumbnailUrl('zentv1', 'gif'),
-    // },
+    {
+        slug: 'zentv1',
+        broadpeakId: 0,
+        title: 'ZenTV1',
+        type: 'live',
+        src: '/live/master.m3u8',
+        thumbnail: getThumbnailUrl('zentv1', 'gif'),
+    },
 ]
 
 export function getStreamUrl(slug: string): string {
