@@ -1,4 +1,5 @@
 const BASE_URL = 'https://videos.mvzen.com'
+const LIVE_BASE_URL = 'https://live.mvzen.com'
 
 export interface Video {
     slug: string
@@ -128,13 +129,17 @@ export const videos: Video[] = [
         title: 'ZenTV1',
         info: '24/7 steaming channel',
         type: 'live',
-        src: '/live/master.m3u8',
+        src: getLiveStreamUrl('zentv1'),
         thumbnail: getThumbnailUrl('flo60'),
     },
 ]
 
 export function getStreamUrl(slug: string): string {
     return `${BASE_URL}/${slug}/master.m3u8`
+}
+
+export function getLiveStreamUrl(slug: string): string {
+    return `${LIVE_BASE_URL}/${slug}/master.m3u8`
 }
 
 export function getThumbnailUrl(slug: string, extension: string = 'jpg'): string {
