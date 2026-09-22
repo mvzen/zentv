@@ -132,6 +132,15 @@ export const videos: Video[] = [
         src: getLiveStreamUrl('zentv1'),
         thumbnail: getThumbnailUrl('flo60'),
     },
+    {
+        slug: 'kidsclips',
+        broadpeakId: 0,
+        title: 'Kids Clips',
+        info: '24/7 clips des cousins',
+        type: 'live',
+        src: getLiveStreamUrl('kidsclips'),
+        thumbnail: getThumbnailUrl('flo60'),
+    },
 ]
 
 export function getStreamUrl(slug: string): string {
