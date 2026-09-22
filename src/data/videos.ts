@@ -15,6 +15,30 @@ export interface Video {
 
 export const videos: Video[] = [
     {
+        slug: 'cam1996',
+        broadpeakId: 0,
+        title: 'Caméscope 1996',
+        info: 'Saint-Aubin & Dinard',
+        type: 'asset',
+        src: getStreamUrl('cam1996'),
+        thumbnail: getThumbnailUrl('cam1996'),
+        duration: 0,
+        createdBy: 'Pierre',
+        createdAt: 1996
+    },
+    // {
+    //     slug: 'cam2000',
+    //     broadpeakId: 0,
+    //     title: 'Caméscope 2000',
+    //     info: 'Soirée Boulevard de la Tour d\'Auvergne',
+    //     type: 'asset',
+    //     src: getStreamUrl('cam2000'),
+    //     thumbnail: getThumbnailUrl('cam2000'),
+    //     duration: 0,
+    //     createdBy: 'Pierre',
+    //     createdAt: 2000
+    // },
+    {
         slug: 'flo60',
         broadpeakId: 215524,
         title: 'Florence (60 ans)',
@@ -54,6 +78,7 @@ export const videos: Video[] = [
         slug: 'markanne40',
         broadpeakId: 0,
         title: 'Mark & Anne (40 ans)',
+        info: 'Diaporama 40 ans de Mark & Anne',
         type: 'asset',
         src: getStreamUrl('markanne40'),
         thumbnail: getThumbnailUrl('markanne40'),
