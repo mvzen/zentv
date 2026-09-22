@@ -26,18 +26,18 @@ export const videos: Video[] = [
         createdBy: 'Pierre',
         createdAt: 1996
     },
-    // {
-    //     slug: 'cam2000',
-    //     broadpeakId: 0,
-    //     title: 'Caméscope 2000',
-    //     info: 'Soirée Boulevard de la Tour d\'Auvergne',
-    //     type: 'asset',
-    //     src: getStreamUrl('cam2000'),
-    //     thumbnail: getThumbnailUrl('cam2000'),
-    //     duration: 0,
-    //     createdBy: 'Pierre',
-    //     createdAt: 2000
-    // },
+    {
+        slug: 'cam2000',
+        broadpeakId: 0,
+        title: 'Caméscope 2000',
+        info: 'Soirée Boulevard de la Tour d\'Auvergne',
+        type: 'asset',
+        src: getStreamUrl('cam2000'),
+        thumbnail: getThumbnailUrl('cam2000'),
+        duration: 0,
+        createdBy: 'Pierre',
+        createdAt: 2000
+    },
     {
         slug: 'flo60',
         broadpeakId: 215524,
