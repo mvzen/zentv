@@ -126,9 +126,10 @@ export const videos: Video[] = [
         slug: 'zentv1',
         broadpeakId: 0,
         title: 'ZenTV1',
+        info: '24/7 steaming channel',
         type: 'live',
         src: '/live/master.m3u8',
-        thumbnail: getThumbnailUrl('zentv1', 'gif'),
+        thumbnail: getThumbnailUrl('flo60'),
     },
 ]
 
