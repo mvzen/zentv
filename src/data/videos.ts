@@ -130,7 +130,7 @@ export const videos: Video[] = [
         info: '24/7 steaming channel',
         type: 'live',
         src: getLiveStreamUrl('zentv1'),
-        thumbnail: getThumbnailUrl('flo60'),
+        thumbnail: getThumbnailUrl('zentv1'),
     },
     {
         slug: 'kidsclips',
@@ -139,7 +139,7 @@ export const videos: Video[] = [
         info: '24/7 clips des cousins',
         type: 'live',
         src: getLiveStreamUrl('kidsclips'),
-        thumbnail: getThumbnailUrl('flo60'),
+        thumbnail: getThumbnailUrl('kidsclips'),
     },
 ]
 
