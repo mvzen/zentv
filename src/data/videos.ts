@@ -1,5 +1,6 @@
 const BASE_URL = 'https://videos.mvzen.com'
 const LIVE_BASE_URL = 'https://live.mvzen.com'
+const BPKIO_STREAM_URL = 'https://stream.broadpeak.io/e464f78f1b3fa6bfbd1b539abb2ba2cf'
 
 export interface Video {
     slug: string
@@ -21,7 +22,7 @@ export const videos: Video[] = [
     //     title: 'Caméscope 1996',
     //     info: 'Saint-Aubin & Dinard',
     //     type: 'asset',
-    //     src: getStreamUrl('cam1996'),
+    //     src: getVideoUrl('cam1996'),
     //     thumbnail: getThumbnailUrl('cam1996'),
     //     duration: 0,
     //     createdBy: 'Pierre',
@@ -33,7 +34,7 @@ export const videos: Video[] = [
     //     title: 'Caméscope 2000',
     //     info: 'Soirée Boulevard de la Tour d\'Auvergne',
     //     type: 'asset',
-    //     src: getStreamUrl('cam2000'),
+    //     src: getVideoUrl('cam2000'),
     //     thumbnail: getThumbnailUrl('cam2000'),
     //     duration: 0,
     //     createdBy: 'Pierre',
@@ -45,7 +46,7 @@ export const videos: Video[] = [
         title: 'Florence (60 ans)',
         info: 'Joan Baez - Diamonds & Rust',
         type: 'asset',
-        src: getStreamUrl('flo60'),
+        src: getVideoUrl('flo60'),
         thumbnail: getThumbnailUrl('flo60'),
         duration: 203,
         createdBy: 'Les Quatre Cousins',
@@ -57,7 +58,7 @@ export const videos: Video[] = [
         title: 'Lily (80 ans)',
         info: 'Simon & Garfunkel - The Sound of Silence',
         type: 'asset',
-        src: getStreamUrl('lily80'),
+        src: getVideoUrl('lily80'),
         thumbnail: getThumbnailUrl('lily80'),
         duration: 206,
         createdBy: 'Les Quatre Cousins',
@@ -69,7 +70,7 @@ export const videos: Video[] = [
         title: 'Christine (70 ans)',
         info: 'Tracy Chapman - Telling Stories',
         type: 'asset',
-        src: getStreamUrl('christine70'),
+        src: getVideoUrl('christine70'),
         thumbnail: getThumbnailUrl('christine70'),
         duration: 255,
         createdBy: 'Les Quatre Cousins',
@@ -81,7 +82,7 @@ export const videos: Video[] = [
     //     title: 'Mark & Anne (40 ans)',
     //     info: 'Diaporama 40 ans de Mark & Anne',
     //     type: 'asset',
-    //     src: getStreamUrl('markanne40'),
+    //     src: getVideoUrl('markanne40'),
     //     thumbnail: getThumbnailUrl('markanne40'),
     //     duration: 1016,
     //     createdBy: 'Corinne',
@@ -93,7 +94,7 @@ export const videos: Video[] = [
         title: 'Coco (40 ans)',
         info: 'Kids United - On écrit sur les murs',
         type: 'asset',
-        src: getStreamUrl('coco40'),
+        src: getVideoUrl('coco40'),
         thumbnail: getThumbnailUrl('coco40'),
         duration: 195,
         createdBy: 'Les Quatre Cousins',
@@ -105,7 +106,7 @@ export const videos: Video[] = [
     //     title: 'Coco - Sens de la famille',
     //     info: 'Grand Corps Malade - Le sens de la famille',
     //     type: 'asset',
-    //     src: getStreamUrl('sensdelafamille'),
+    //     src: getVideoUrl('sensdelafamille'),
     //     thumbnail: getThumbnailUrl('sensdelafamille'),
     //     duration: 199,
     //     createdBy: 'Hugo / Liam / Mark',
@@ -117,7 +118,7 @@ export const videos: Video[] = [
     //     title: 'Coco - 10 minutes inside',
     //     info: 'Reportage 40 ans de Coco',
     //     type: 'asset',
-    //     src: getStreamUrl('10minside'),
+    //     src: getVideoUrl('10minside'),
     //     thumbnail: getThumbnailUrl('10minside'),
     //     duration: 880,
     //     createdBy: 'Mark',
@@ -129,26 +130,39 @@ export const videos: Video[] = [
         title: 'ZenTV1',
         info: '24/7 steaming channel',
         type: 'live',
-        src: getLiveStreamUrl('zentv1'),
+        src: getLiveUrl('zentv1'),
+        thumbnail: getThumbnailUrl('zentv1', 'gif'),
+    },
+    {
+        slug: 'zentv1-lite',
+        broadpeakId: 0,
+        title: 'ZenTV1 (ads)',
+        info: '24/7 steaming channel with ads',
+        type: 'live',
+        src: getBpkioStreamUrl('zentv1'),
         thumbnail: getThumbnailUrl('zentv1', 'gif'),
     },
     {
         slug: 'kidsclips',
         broadpeakId: 0,
-        title: 'Kids Clips',
+        title: 'Kids Clips TV',
         info: '24/7 clips des cousins',
         type: 'live',
-        src: getLiveStreamUrl('kidsclips'),
+        src: getLiveUrl('kidsclips'),
         thumbnail: getThumbnailUrl('kidsclips', 'gif'),
     },
 ]
 
-export function getStreamUrl(slug: string): string {
+export function getVideoUrl(slug: string): string {
     return `${BASE_URL}/${slug}/master.m3u8`
 }
 
-export function getLiveStreamUrl(slug: string): string {
+export function getLiveUrl(slug: string): string {
     return `${LIVE_BASE_URL}/${slug}/master.m3u8`
+}
+
+export function getBpkioStreamUrl(slug: string): string {
+    return `${BPKIO_STREAM_URL}/${slug}/master.m3u8`
 }
 
 export function getThumbnailUrl(slug: string, extension: string = 'jpg'): string {
