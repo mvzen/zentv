@@ -34,6 +34,9 @@ Vibe coded with Cursor and fine-tuned by hand.
 ## Generate thumbnail
 `ffmpeg -ss 00:00:05.00 -i markanne40.mp4 -vf 'scale=640:640:force_original_aspect_ratio=decrease' -vframes 1 markanne40/preview.jpg`
 
+## Generate GIF
+`ffmpeg -i lily80.mp4 -ss 00:01:19 -t 6 -vf "fps=8,scale=-1:240" -sws_flags area preview.gif`
+
 ## Generate HLS from mp4
 ```console
 ffmpeg -i input.mp4 \
