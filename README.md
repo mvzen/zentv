@@ -36,22 +36,40 @@ Vibe coded with Cursor and fine-tuned by hand.
 
 ## Generate HLS from mp4
 ```console
-ffmpeg -i ../markanne40.mp4 \
-  -filter_complex "[0:v]split=3[v1][v2][v3];[v1]scale=w=1920:h=1080[v1out];[v2]scale=w=1280:h=720[v2out];[v3]scale=w=854:h=480[v3out]" \
-  -map "[v1out]" -c:v:0 libx264 -b:v:0 5000k \
-  -map "[v2out]" -c:v:1 libx264 -b:v:1 3000k \
-  -map "[v3out]" -c:v:2 libx264 -b:v:2 1000k \
-  -map a:0 -c:a:0 aac -b:a:0 128k \
-  -map a:0 -c:a:1 aac -b:a:1 128k \
-  -map a:0 -c:a:2 aac -b:a:2 96k \
-  -f hls \
-  -hls_time 6 \
-  -hls_playlist_type vod \
-  -hls_segment_filename "v%v/segment_%03d.ts" \
-  -master_pl_name master.m3u8 \
-  -var_stream_map "v:0,a:0 v:1,a:1 v:2,a:2" \
-  v%v/index.m3u8
+ffmpeg -i input.mp4 \
+  -filter_complex \
+  "[0:v]split=3[v0_in][v1_in][v2_in]; \
+   [v0_in]scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2[v0_out]; \
+   [v1_in]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2[v1_out]; \
+   [v2_in]scale=852:480:force_original_aspect_ratio=decrease,pad=852:480:(ow-iw)/2:(oh-ih)/2[v2_out]" \
+  \
+  -map "[v0_out]" -map 0:a? \
+  -c:v:0 libx264 -preset medium -pix_fmt yuv420p -profile:v:0 high \
+  -b:v:0 4500k -maxrate:v:0 5000k -bufsize:v:0 10000k \
+  -g 120 -keyint_min 120 -sc_threshold 0 \
+  -c:a:0 aac -b:a:0 128k -ar:a:0 48000 -ac:a:0 2 \
+  -f hls -hls_time 4 -hls_playlist_type vod \
+  -hls_flags create_dir \
+  -hls_segment_filename "v0/segment_%03d.ts" v0/index.m3u8 \
+  \
+  -map "[v1_out]" -map 0:a? \
+  -c:v:1 libx264 -preset medium -pix_fmt yuv420p -profile:v:1 main \
+  -b:v:1 2500k -maxrate:v:1 2800k -bufsize:v:1 5600k \
+  -g 120 -keyint_min 120 -sc_threshold 0 \
+  -c:a:1 aac -b:a:1 128k -ar:a:1 48000 -ac:a:1 2 \
+  -f hls -hls_time 4 -hls_playlist_type vod \
+  -hls_flags create_dir \
+  -hls_segment_filename "v1/segment_%03d.ts" v1/index.m3u8 \
+  \
+  -map "[v2_out]" -map 0:a? \
+  -c:v:2 libx264 -preset medium -pix_fmt yuv420p -profile:v:2 main \
+  -b:v:2 1000k -maxrate:v:2 1200k -bufsize:v:2 2400k \
+  -g 120 -keyint_min 120 -sc_threshold 0 \
+  -c:a:2 aac -b:a:2 128k -ar:a:2 48000 -ac:a:2 2 \
+  -f hls -hls_time 4 -hls_playlist_type vod \
+  -hls_flags create_dir \
+  -hls_segment_filename "v2/segment_%03d.ts" v2/index.m3u8
 ```
 
 ## Sync R2 Storage
-`rclone sync . r2:zenvideos -P`
+`rclone sync . r2:zenvideos --exclude ".DS_Store" -P`

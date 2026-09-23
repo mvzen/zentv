@@ -15,30 +15,30 @@ export interface Video {
 }
 
 export const videos: Video[] = [
-    {
-        slug: 'cam1996',
-        broadpeakId: 0,
-        title: 'Caméscope 1996',
-        info: 'Saint-Aubin & Dinard',
-        type: 'asset',
-        src: getStreamUrl('cam1996'),
-        thumbnail: getThumbnailUrl('cam1996'),
-        duration: 0,
-        createdBy: 'Pierre',
-        createdAt: 1996
-    },
-    {
-        slug: 'cam2000',
-        broadpeakId: 0,
-        title: 'Caméscope 2000',
-        info: 'Soirée Boulevard de la Tour d\'Auvergne',
-        type: 'asset',
-        src: getStreamUrl('cam2000'),
-        thumbnail: getThumbnailUrl('cam2000'),
-        duration: 0,
-        createdBy: 'Pierre',
-        createdAt: 2000
-    },
+    // {
+    //     slug: 'cam1996',
+    //     broadpeakId: 0,
+    //     title: 'Caméscope 1996',
+    //     info: 'Saint-Aubin & Dinard',
+    //     type: 'asset',
+    //     src: getStreamUrl('cam1996'),
+    //     thumbnail: getThumbnailUrl('cam1996'),
+    //     duration: 0,
+    //     createdBy: 'Pierre',
+    //     createdAt: 1996
+    // },
+    // {
+    //     slug: 'cam2000',
+    //     broadpeakId: 0,
+    //     title: 'Caméscope 2000',
+    //     info: 'Soirée Boulevard de la Tour d\'Auvergne',
+    //     type: 'asset',
+    //     src: getStreamUrl('cam2000'),
+    //     thumbnail: getThumbnailUrl('cam2000'),
+    //     duration: 0,
+    //     createdBy: 'Pierre',
+    //     createdAt: 2000
+    // },
     {
         slug: 'flo60',
         broadpeakId: 215524,
@@ -75,18 +75,18 @@ export const videos: Video[] = [
         createdBy: 'Les Quatre Cousins',
         createdAt: 2023
     },
-    {
-        slug: 'markanne40',
-        broadpeakId: 0,
-        title: 'Mark & Anne (40 ans)',
-        info: 'Diaporama 40 ans de Mark & Anne',
-        type: 'asset',
-        src: getStreamUrl('markanne40'),
-        thumbnail: getThumbnailUrl('markanne40'),
-        duration: 1016,
-        createdBy: 'Corinne',
-        createdAt: 2025
-    },
+    // {
+    //     slug: 'markanne40',
+    //     broadpeakId: 0,
+    //     title: 'Mark & Anne (40 ans)',
+    //     info: 'Diaporama 40 ans de Mark & Anne',
+    //     type: 'asset',
+    //     src: getStreamUrl('markanne40'),
+    //     thumbnail: getThumbnailUrl('markanne40'),
+    //     duration: 1016,
+    //     createdBy: 'Corinne',
+    //     createdAt: 2025
+    // },
     {
         slug: 'coco40',
         broadpeakId: 215523,
@@ -99,30 +99,30 @@ export const videos: Video[] = [
         createdBy: 'Les Quatre Cousins',
         createdAt: 2026
     },
-    {
-        slug: 'sensdelafamille',
-        broadpeakId: 215525,
-        title: 'Coco - Sens de la famille',
-        info: 'Grand Corps Malade - Le sens de la famille',
-        type: 'asset',
-        src: getStreamUrl('sensdelafamille'),
-        thumbnail: getThumbnailUrl('sensdelafamille'),
-        duration: 199,
-        createdBy: 'Hugo / Liam / Mark',
-        createdAt: 2026
-    },
-    {
-        slug: '10minside',
-        broadpeakId: 0,
-        title: 'Coco - 10 minutes inside',
-        info: 'Reportage 40 ans de Coco',
-        type: 'asset',
-        src: getStreamUrl('10minside'),
-        thumbnail: getThumbnailUrl('10minside'),
-        duration: 880,
-        createdBy: 'Mark',
-        createdAt: 2026
-    },
+    // {
+    //     slug: 'sensdelafamille',
+    //     broadpeakId: 215525,
+    //     title: 'Coco - Sens de la famille',
+    //     info: 'Grand Corps Malade - Le sens de la famille',
+    //     type: 'asset',
+    //     src: getStreamUrl('sensdelafamille'),
+    //     thumbnail: getThumbnailUrl('sensdelafamille'),
+    //     duration: 199,
+    //     createdBy: 'Hugo / Liam / Mark',
+    //     createdAt: 2026
+    // },
+    // {
+    //     slug: '10minside',
+    //     broadpeakId: 0,
+    //     title: 'Coco - 10 minutes inside',
+    //     info: 'Reportage 40 ans de Coco',
+    //     type: 'asset',
+    //     src: getStreamUrl('10minside'),
+    //     thumbnail: getThumbnailUrl('10minside'),
+    //     duration: 880,
+    //     createdBy: 'Mark',
+    //     createdAt: 2026
+    // },
     {
         slug: 'zentv1',
         broadpeakId: 0,
