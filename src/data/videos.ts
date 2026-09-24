@@ -134,13 +134,13 @@ export const videos: Video[] = [
         thumbnail: getThumbnailUrl('zentv1', 'gif'),
     },
     {
-        slug: 'zentv1-lite',
+        slug: 'zentv1lite',
         broadpeakId: 0,
         title: 'ZenTV1 (ads)',
         info: '24/7 steaming channel with ads',
         type: 'live',
         src: getBpkioStreamUrl('zentv1'),
-        thumbnail: getThumbnailUrl('zentv1', 'gif'),
+        thumbnail: getThumbnailUrl('zentv1lite'),
     },
     {
         slug: 'kidsclips',
