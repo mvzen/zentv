@@ -100,18 +100,18 @@ export const videos: Video[] = [
         createdBy: 'Les Quatre Cousins',
         createdAt: 2026
     },
-    // {
-    //     slug: 'sensdelafamille',
-    //     broadpeakId: 215525,
-    //     title: 'Coco - Sens de la famille',
-    //     info: 'Grand Corps Malade - Le sens de la famille',
-    //     type: 'asset',
-    //     src: getVideoUrl('sensdelafamille'),
-    //     thumbnail: getThumbnailUrl('sensdelafamille'),
-    //     duration: 199,
-    //     createdBy: 'Hugo / Liam / Mark',
-    //     createdAt: 2026
-    // },
+    {
+        slug: 'sensdelafamille',
+        broadpeakId: 215525,
+        title: 'Coco - Sens de la famille',
+        info: 'Grand Corps Malade - Le sens de la famille',
+        type: 'asset',
+        src: getVideoUrl('sensdelafamille'),
+        thumbnail: getThumbnailUrl('sensdelafamille'),
+        duration: 199,
+        createdBy: 'Hugo / Liam / Mark',
+        createdAt: 2026
+    },
     // {
     //     slug: '10minside',
     //     broadpeakId: 0,
