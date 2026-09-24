@@ -4,13 +4,11 @@ const BPKIO_STREAM_URL = 'https://stream.broadpeak.io/e464f78f1b3fa6bfbd1b539abb
 
 export interface Video {
     slug: string
-    broadpeakId?: number
     title: string
     info?: string
     type: 'asset' | 'live'
     src: string
     thumbnail?: string
-    duration?: number
     createdBy?: string
     createdAt?: number
 }
@@ -48,7 +46,6 @@ export const videos: Video[] = [
         type: 'asset',
         src: getVideoUrl('flo60'),
         thumbnail: getThumbnailUrl('flo60'),
-        duration: 203,
         createdBy: 'Les Quatre Cousins',
         createdAt: 2018
     },
@@ -60,7 +57,6 @@ export const videos: Video[] = [
         type: 'asset',
         src: getVideoUrl('lily80'),
         thumbnail: getThumbnailUrl('lily80'),
-        duration: 206,
         createdBy: 'Les Quatre Cousins',
         createdAt: 2022
     },
@@ -72,61 +68,52 @@ export const videos: Video[] = [
         type: 'asset',
         src: getVideoUrl('christine70'),
         thumbnail: getThumbnailUrl('christine70'),
-        duration: 255,
         createdBy: 'Les Quatre Cousins',
         createdAt: 2023
     },
-    // {
-    //     slug: 'markanne40',
-    //     broadpeakId: 0,
-    //     title: 'Mark & Anne (40 ans)',
-    //     info: 'Diaporama 40 ans de Mark & Anne',
-    //     type: 'asset',
-    //     src: getVideoUrl('markanne40'),
-    //     thumbnail: getThumbnailUrl('markanne40'),
-    //     duration: 1016,
-    //     createdBy: 'Corinne',
-    //     createdAt: 2025
-    // },
+    {
+        slug: 'markanne40',
+        title: 'Mark & Anne (40 ans)',
+        info: 'Diaporama 40 ans de Mark & Anne',
+        type: 'asset',
+        src: getVideoUrl('markanne40'),
+        thumbnail: getThumbnailUrl('markanne40'),
+        createdBy: 'Corinne',
+        createdAt: 2025
+    },
     {
         slug: 'coco40',
-        broadpeakId: 215523,
         title: 'Coco (40 ans)',
         info: 'Kids United - On écrit sur les murs',
         type: 'asset',
         src: getVideoUrl('coco40'),
         thumbnail: getThumbnailUrl('coco40'),
-        duration: 195,
         createdBy: 'Les Quatre Cousins',
         createdAt: 2026
     },
     {
         slug: 'sensdelafamille',
-        broadpeakId: 215525,
         title: 'Coco - Sens de la famille',
         info: 'Grand Corps Malade - Le sens de la famille',
         type: 'asset',
         src: getVideoUrl('sensdelafamille'),
         thumbnail: getThumbnailUrl('sensdelafamille'),
-        duration: 199,
         createdBy: 'Hugo / Liam / Mark',
         createdAt: 2026
     },
-    // {
-    //     slug: '10minside',
-    //     broadpeakId: 0,
-    //     title: 'Coco - 10 minutes inside',
-    //     info: 'Reportage 40 ans de Coco',
-    //     type: 'asset',
-    //     src: getVideoUrl('10minside'),
-    //     thumbnail: getThumbnailUrl('10minside'),
-    //     duration: 880,
-    //     createdBy: 'Mark',
-    //     createdAt: 2026
-    // },
+    {
+        slug: '10minside',
+        broadpeakId: 0,
+        title: 'Coco - 10 minutes inside',
+        info: 'Reportage 40 ans de Coco',
+        type: 'asset',
+        src: getVideoUrl('10minside'),
+        thumbnail: getThumbnailUrl('10minside'),
+        createdBy: 'Mark',
+        createdAt: 2026
+    },
     {
         slug: 'zentv1',
-        broadpeakId: 0,
         title: 'ZenTV1',
         info: '24/7 steaming channel',
         type: 'live',
@@ -135,7 +122,6 @@ export const videos: Video[] = [
     },
     {
         slug: 'zentv1lite',
-        broadpeakId: 0,
         title: 'ZenTV1 (ads)',
         info: '24/7 steaming channel with ads',
         type: 'live',
@@ -144,7 +130,6 @@ export const videos: Video[] = [
     },
     {
         slug: 'kidsclips',
-        broadpeakId: 0,
         title: 'Kids Clips TV',
         info: '24/7 clips des cousins',
         type: 'live',
