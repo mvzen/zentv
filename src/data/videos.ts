@@ -40,7 +40,6 @@ export const videos: Video[] = [
     // },
     {
         slug: 'flo60',
-        broadpeakId: 215524,
         title: 'Florence (60 ans)',
         info: 'Joan Baez - Diamonds & Rust',
         type: 'asset',
@@ -51,7 +50,6 @@ export const videos: Video[] = [
     },
     {
         slug: 'lily80',
-        broadpeakId: 213843,
         title: 'Lily (80 ans)',
         info: 'Simon & Garfunkel - The Sound of Silence',
         type: 'asset',
@@ -62,7 +60,6 @@ export const videos: Video[] = [
     },
     {
         slug: 'christine70',
-        broadpeakId: 213846,
         title: 'Christine (70 ans)',
         info: 'Tracy Chapman - Telling Stories',
         type: 'asset',
@@ -103,7 +100,6 @@ export const videos: Video[] = [
     },
     {
         slug: '10minside',
-        broadpeakId: 0,
         title: 'Coco - 10 minutes inside',
         info: 'Reportage 40 ans de Coco',
         type: 'asset',
