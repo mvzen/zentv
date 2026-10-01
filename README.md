@@ -73,7 +73,7 @@ mkdir -p v0 v1 v2 && ffmpeg -i input.mp4 \
   -master_pl_name master.m3u8 \
   -var_stream_map "v:0,a:0,name:v0 v:1,a:1,name:v1 v:2,a:2,name:v2" \
   %v/index.m3u8
-```
+``` 
 
 ## Sync R2 Storage
-`rclone sync . r2:zenvideos --exclude ".DS_Store" -P`
+`rclone sync . r2:zenvideos --exclude ".DS_Store" -P` 
