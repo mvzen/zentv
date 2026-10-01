@@ -39,7 +39,9 @@ async function updateService(env) {
             return { success: false, error: data }
         }
 
-        return { state: payload.state ? 'Service enabled' : 'Service paused' }
+        return {
+            message: payload.state === 'enabled' ? 'Service has been enabled. Please wait a moment.' : 'Service has been paused and will disconnect shortly.',
+        }
     } catch (error) {
         console.error("Erreur d'exécution:", error)
         return { success: false, error: error.message }

@@ -412,6 +412,21 @@ hr {
     align-items: center;
 }
 
+.live-controls .message:before {
+    content: '●';
+    color: transparent;
+    padding-right: 0.5rem;
+    font-size: 0.65rem;
+}
+
+.live-controls .message.is-paused:before {
+    color: rgb(185, 47, 47);
+}
+
+.live-controls .message.is-running:before {
+    color: rgb(106, 187, 52);
+}
+
 @media (max-width: 640px) {
     .site-header__inner {
         flex-wrap: wrap;

@@ -41,7 +41,7 @@ export function Play() {
                         <Player video={video} />
                     </div>
 
-                    {video.showControls && <LiveControls />}
+                    {video.showControls && <LiveControls src={video.src} />}
 
                 </div>
             </main>
