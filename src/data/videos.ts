@@ -9,6 +9,9 @@ export interface Video {
     type: 'asset' | 'live'
     src: string
     thumbnail?: string
+    serviceId?: number
+    serviceType?: string
+    showControls?: boolean
     createdBy?: string
     createdAt?: number
 }
@@ -123,6 +126,9 @@ export const videos: Video[] = [
         type: 'live',
         src: getBpkioStreamUrl('zentv1'),
         thumbnail: getThumbnailUrl('zentv1lite'),
+        serviceId: 84010,
+        serviceType: 'ad-insertion',
+        showControls: true
     },
     {
         slug: 'kidsclips',

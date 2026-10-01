@@ -407,6 +407,11 @@ hr {
     opacity: 0.75;
 }
 
+.live-controls .message {
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 640px) {
     .site-header__inner {
         flex-wrap: wrap;

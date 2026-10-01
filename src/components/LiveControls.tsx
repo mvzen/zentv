@@ -1,26 +1,38 @@
-import React from 'react'
+import { useState } from 'react'
 
 export function LiveControls() {
+    const [message, setMessage] = useState<string>('')
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    const handleAction = async (action: string, e: React.SyntheticEvent) => {
+    const toggleState = async (e: React.SyntheticEvent) => {
         e.preventDefault()
-        const buttons = document.getElementsByClassName('buttons')[0]
-        buttons.classList.add('is-disabled')
+        setIsLoading(true)
+        setMessage('')
+
         try {
-            await fetch(`/${action}`)
-        } catch (err) {
+            const res = await fetch('/service/toggleState')
+            const data = await res.json()
+
+            if (!res.ok) {
+                throw new Error(data.message || `Error ${res.status}`)
+            }
+
+            setMessage(data.state)
+        } catch (err: any) {
             console.error('Request failed:', err)
+            setMessage(err.message || 'An error occurred')
         } finally {
-            buttons.classList.remove('is-disabled')
+            setIsLoading(false)
         }
     }
 
+
     return (
         <fieldset className="live-controls">
-            <legend>Broadpeak.io manifest manipulation</legend>
-            <div className="buttons">
-                <button onClick={(evt) => handleAction('scheduler', evt)}>Schedule slots</button>
-                <button onClick={(evt) => handleAction('blackout', evt)}>Blackout stream</button>
+            <legend>Broadpeak.io</legend>
+            <div className={`buttons ${isLoading ? 'is-disabled' : ''}`}>
+                <button onClick={(evt) => toggleState(evt)}>Toggle service state</button>
+                <div className="message">{message}</div>
             </div>
         </fieldset>
     )
